@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html manifest="index.html.appcache">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <meta name="format-detection" content="telephone=no">
+        <title>京杭明珠</title>
+        <link rel="stylesheet" type="text/css" href="style/index.css" />
+        <link rel="stylesheet" type="text/css" href="style/animate.css" />
+        <link rel="stylesheet" type="text/css" href="style/idangerous.swiper.css" />
+        <script type="text/javascript" src="style/jquery-1.7.1.min.js"></script>
+    </head>
+<body>
+<div id="loading" class="loading">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<div class="peitao">
+    <img src="images/xitong.jpg" alt="" class="index-bg">
+    <div class="title"><img src="images/xitong10-1.png"></div>
+    <div class="con-box">
+        <div class="text">  
+            <p class="fadeInLeft s1 yanchi800">京杭明珠采用了一流的小区安保设施，装有可</p>
+            <p class="fadeInLeft s1 yanchi1100">视对讲、闭路电视监视、电子巡更管理、防越</p>
+            <p class="fadeInLeft s1 yanchi1400">翻报警等，可实现全天候独立式智能化管理，</p>
+			<p class="fadeInLeft s1 yanchi1700">有效保证小区安全。</p>
+        </div>
+        <p><img src="images/xitong10-3.png" alt="" class="flipInX s2 yanchi800"></p>
+    </div>
+<span class="c-arrow-left">左箭头</span>
+<span class="c-arrow-right">右箭头</span>
+</div>
+<a href="main.html" class="back-home"><img src="images/back.png"></a>
+<style>.btn_music{display:inline-block;width:35px;height: 35px;background: url('') no-repeat center center;background-size: 100% auto;position: absolute;z-index:100;left:30px;top:30px;}.btn_music.on {background-image: url("");}</style>
+<script src="style/audio.js" type="text/javascript"></script>
+<script>window.addEventListener("DOMContentLoaded", function(){playbox.init("playbox");}, false);</script>
+<span id="playbox" class="btn_music" onClick="playbox.init(this).play();">
+<audio src="http://www.yzhjwh.com/mp3/201406.mp3" loop id="audio" autoplay="true"></audio></span>
+
+</body>
+<script type="text/javascript" src="style/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="style/share.js"></script>
+<script type="text/javascript" src="style/index.js"></script>
+<script>
+autoHeight(".peitao");
+$(function(){
+    $(".title").animate({"width":"100%"}, 3000)
+})
+$('body').swipe({
+            swipeLeft: function(event, direction, distance, duration, fingerCount) {
+              $('.peitao .title').removeClass('fadeInDown').addClass('fadeOutUp');
+                $('http://114.215.168.23/wls/yjc/.con-box .text').addClass('fadeOutLeft s1');  
+                $('.con-box p img').parent().addClass('fadeOutDown s1');
+            setTimeout(function(){
+                window.location.href="zhanwang.html"
+            },500);
+            },
+            swipeRight: function(event, direction, distance, duration, fingerCount) {
+              $('.peitao .title').removeClass('fadeInDown').addClass('fadeOutUp');
+                $('http://114.215.168.23/wls/yjc/.con-box .text').addClass('fadeOutLeft s1');  
+                $('.con-box p img').parent().addClass('fadeOutDown s1');
+            setTimeout(function(){
+                window.location.href="xinfeng.html"
+            },500);
+            }
+        });
+</script>
+</html>
